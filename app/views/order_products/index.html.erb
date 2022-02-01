@@ -1,0 +1,106 @@
+<head>
+
+  <div class="mt-4 p-5 bg-info text-dark">
+    <h1> Carrinho de compras</h1>
+  </div>
+</head>
+<body>
+
+
+<nav class="navbar bg-dark ">
+
+  <div class="container-fluid">
+    <ul class="nav -nav-tabs">
+      <li class="nav-item bg-light">
+        <%= link_to 'Pessoas', people_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item bg-light">
+        <%= link_to 'Produtos', products_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item bg-light">
+        <%= link_to 'Pedidos/Compras', orders_path, class:"nav-link" %>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+<strong><h5>  Querys <span class="badge bg-secondary">Desafio 3 Parte 3: </h5></strong>
+
+<br>
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-4">
+          <table class="table table-bordered table-secondary">
+            <p class="lead">Tabela da consulta 1 : listar todas as pessoas:</p>
+            <% @tabela_consulta1.each do |consulta| %>
+              <thead>
+              <tr>
+                <th scope="col"> Nome: <%= consulta.name %> </th>
+              </tr>
+              </thead>
+            <% end %>
+          </table>
+        </div>
+        <div class="col-4">
+          <table class="table table-bordered table-secondary">
+            <p class="lead">Tabela da consulta 2 : listar todos os produtos:</p>
+            <% @tabela_consulta2.each do |consulta| %>
+              <thead>
+              <tr>
+                <th scope="col"> Produto: <%= consulta.description %> </th>
+              </tr>
+              </thead>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+<br>
+
+<div class="container-fluid">
+  <div class="row justify-content-start">
+    <div class="col-5">
+      <p class="lead">Tabela da consulta 3: listar compras onde a pessoa 'Jose' faz parte: </p>
+      <table class="table table-bordered table-secondary">
+        <% @tabela_consulta3.each do |consulta| %>
+          <thead>
+          <tr>
+            <th scope="col"> Identificação da compra: <%= consulta.description %> </th>
+            <th scope="col"> Comprador: <%= consulta.person.name %> </th>
+          </tr>
+          </thead>
+        <% end %>
+      </table>
+    </div>
+    <div class="col-5">
+      <p class="lead">Tabela da consulta 4 : listar compras com nome do comprador onde existe o produto 'Arroz':</p>
+      <table class="table table-bordered table-secondary">
+        <% @tabela_consulta4.each do |consulta| %>
+          <thead>
+          <tr>
+            <th scope="col"> Identificação da compra: <%= consulta.compra %> </th>
+            <th scope="col"> Produto: <%= consulta.description %> </th>
+            <th scope="col"> Comprador: <%= consulta.name %> </th>
+          </tr>
+          </thead>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<br>
+
+</body>
+
+
+
+
+
+
+
+
