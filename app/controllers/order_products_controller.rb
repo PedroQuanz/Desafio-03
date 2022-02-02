@@ -13,17 +13,17 @@ class OrderProductsController < ApplicationController
   # GET /order_products or /order_products.json
   def index
     @order_products = OrderProduct.all
-    consulta
-  end
+    consulta 
+  end 
 
-  # GET /order_products/1 or /order_products/1.json
+  # GET /ord er_products/1 or /order_products/1.json
   def show
-    @orders = Order.all
+    @orders = Order.all 
   end
 
 
   # GET /order_products/new
-  def new
+  def new 
     @order_product = OrderProduct.new
   end
 
