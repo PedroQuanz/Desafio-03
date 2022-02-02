@@ -60,23 +60,23 @@ class OrderProductsController < ApplicationController
   end
 
   # DELETE /order_products/1 or /order_products/1.json
-  def destroy
-    @order_product.destroy
-
+  def destroy 
+    @order_product.destroy 
+ 
     respond_to do |format|
       format.html { redirect_to order_products_url, notice: "Order product was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+      format.json { head :no_content } 
+    end 
+  end 
 
-  private
+  private 
     # Use callbacks to share common setup or constraints between actions.
-    def set_order_product
-      @order_product = OrderProduct.find(params[:id])
-    end
-
+    def set_order_product 
+      @order_product = OrderProduct.find(params[:id]) 
+    end 
+ 
     # Only allow a list of trusted parameters through.
-    def order_product_params
+    def order_product_params 
       params.require(:order_product).permit(:order_id, :product_id, :ammount)
-    end
-end
+    end 
+end 
